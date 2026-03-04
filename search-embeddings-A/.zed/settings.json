@@ -1,0 +1,7 @@
+{
+  "jupyter": {
+    "kernel_selections": {
+      "python": "contentful-pinecone-embeddings"
+    }
+  }
+}

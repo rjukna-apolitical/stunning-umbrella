@@ -1,0 +1,11 @@
+.venv/
+.git/
+.env
+__pycache__/
+*.pyc
+*.pyo
+poc_search.py
+README.md
+logs/
+data/
+exports/

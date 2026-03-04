@@ -1,0 +1,49 @@
+[project]
+name = "search-poc-b"
+version = "0.1.0"
+description = "Multilingual hybrid search POC — mE5-large + BM25 on Pinecone"
+requires-python = ">=3.12,<3.13"
+
+dependencies = [
+    # Jupyter kernel for Zed's REPL
+    "ipykernel>=6.29.5",
+
+    # Pinecone vector DB + hosted mE5-large inference
+    "pinecone>=5.1.0",
+
+    # Contentful CMS client
+    "contentful>=2.2.0",
+
+    # BM25 tokenisation pipeline
+    # snowballstemmer 3.0.1 in pure Python mode. Covers all 13 Snowball
+    # languages including Polish (Oct 2025) and Serbian (Oct 2019).
+    # We deliberately do NOT install PyStemmer — it causes an API mismatch
+    # on newer Python versions where snowballstemmer calls Stemmer.language()
+    # but PyStemmer only exposes Stemmer.algorithms(). The pure Python
+    # performance is more than sufficient: stemming a query takes <0.1ms,
+    # while Pinecone API calls take 15-30ms.
+    "snowballstemmer>=3.0.1",
+    "nltk>=3.9.1",
+    "mmh3>=5.1.0",
+
+    # Data processing
+    "numpy>=2.2.0",
+    "pandas>=2.2.0",
+
+    # Utilities
+    "python-dotenv>=1.1.0",
+    "requests>=2.32.0",
+    "tqdm>=4.67.0",
+]
+
+[project.optional-dependencies]
+# Tier 3 language tokenisers — install with: uv sync --extra cjk
+# These pull in larger dependencies (MeCab dictionaries ~50MB, Kiwi
+# models ~60MB). The POC falls back to whitespace tokenisation for
+# ja/ko/vi if these aren't installed.
+cjk = [
+    "fugashi>=1.4.0",       # Japanese: MeCab morphological analyser
+    "unidic-lite>=1.0.8",   # Japanese: MeCab dictionary
+    "kiwipiepy>=0.20.0",    # Korean: Kiwi morphological analyser
+    "pyvi>=0.1.1",          # Vietnamese: CRF word segmenter
+]
