@@ -8,7 +8,7 @@ import logging
 
 from config import BM25_STATS_PATH
 from modules.bm25 import SUPPORTED_LOCALES, load_bm25
-from modules.contentful import get_all_entries
+from modules.contentful import get_all_entries, get_banner_url
 from modules.embedding import chunk_text, embed_dense_passages
 from modules.pinecone_utils import upsert_batch
 
@@ -35,6 +35,7 @@ def embed_event():
         slug_by_locale = fields.get("slug", {})
 
         available_locales = list(description_by_locale.keys())
+        banner_url = get_banner_url(entry)
 
         for locale, description in description_by_locale.items():
             if not description or locale not in SUPPORTED_LOCALES:
@@ -69,6 +70,7 @@ def embed_event():
                         "snippet": chunk[:300],
                         "published_date": int(created_at.timestamp()),
                         "available_locales": available_locales,
+                        **({"banner_url": banner_url} if banner_url else {}),
                     },
                 })
 

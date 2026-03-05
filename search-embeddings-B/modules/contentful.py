@@ -79,6 +79,31 @@ def get_all_entries(content_type: str, page_size: int = PAGE_SIZE, include: int 
             time.sleep(0.3)
 
 
+def get_banner_url(entry) -> str | None:
+    """Extract banner image URL from a Contentful entry's bannerImage asset field.
+
+    With locale="*" fetched entries, asset file fields are locale-keyed
+    (e.g. {"en": {"url": "//..."}}), so asset.url() doesn't work — we read
+    the raw asset fields directly instead.
+    Requires include >= 1 at fetch time so the asset is resolved in includes.
+    Returns an https:// URL, or None if the field is absent or unresolvable.
+    """
+    try:
+        banner = entry.fields("en").get("banner_image")
+        if not banner or not hasattr(banner, "raw"):
+            # Absent or unresolved Link (entry fetched with include=0)
+            return None
+        # With locale="*", file is {"en": {"url": "//...", ...}}
+        file_data = banner.raw.get("fields", {}).get("file", {})
+        en_file = file_data.get("en", file_data)
+        url = en_file.get("url", "") if isinstance(en_file, dict) else ""
+        if url:
+            return f"https:{url}" if url.startswith("//") else url
+    except Exception:
+        pass
+    return None
+
+
 def getEntry(entry_id: str):
     for include in [2, 1, 0]:
         for attempt in range(MAX_RETRIES):

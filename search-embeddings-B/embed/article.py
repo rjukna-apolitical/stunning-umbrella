@@ -9,7 +9,7 @@ import time
 
 from config import BM25_STATS_PATH
 from modules.bm25 import SUPPORTED_LOCALES, load_bm25
-from modules.contentful import get_all_entries
+from modules.contentful import get_all_entries, get_banner_url
 from modules.embedding import chunk_text, embed_dense_passages
 from modules.pinecone_utils import upsert_batch
 
@@ -39,6 +39,7 @@ def embed_article():
         published_date = _parse_date(published_date_raw) or int(entry.sys["created_at"].timestamp())
 
         available_locales = list(body_by_locale.keys())
+        banner_url = _get_image_url(entry)
 
         for locale, body in body_by_locale.items():
             if not body or locale not in SUPPORTED_LOCALES:
@@ -73,6 +74,7 @@ def embed_article():
                         "snippet": chunk[:300],
                         "published_date": published_date,
                         "available_locales": available_locales,
+                        **({"banner_url": banner_url} if banner_url else {}),
                     },
                 })
 
@@ -86,6 +88,24 @@ def embed_article():
         total_upserted += len(vectors)
 
     log.info("Done. Upserted %d vectors for %s.", total_upserted, CONTENT_TYPE)
+
+
+def _get_image_url(entry) -> str | None:
+    """Return image URL for an article: coverImage.url first, bannerImage asset as fallback.
+
+    coverImage is a linked entry (image holder) whose url field is a plain non-localized
+    short text string. bannerImage is a Contentful asset resolved via get_banner_url().
+    """
+    try:
+        cover = entry.fields("en").get("cover_image")
+        if cover and hasattr(cover, "raw"):
+            # url is a non-localized field; with locale="*" it's keyed by default locale
+            url = cover.raw.get("fields", {}).get("url", {}).get("en", "")
+            if url:
+                return url
+    except Exception:
+        pass
+    return get_banner_url(entry)
 
 
 def _parse_date(date_str: str) -> int | None:

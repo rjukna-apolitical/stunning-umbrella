@@ -12,7 +12,7 @@ WORKDIR /app
 
 # Install Python dependencies (own layer — only rebuilds when lockfile changes)
 COPY pyproject.toml uv.lock ./
-RUN uv sync --frozen
+RUN uv sync --frozen --extra cjk
 
 # Copy source
 COPY config.py setup_index.py setup_bm25.py entrypoint.py ./

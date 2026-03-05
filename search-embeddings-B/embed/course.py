@@ -12,7 +12,7 @@ import logging
 
 from config import BM25_STATS_PATH
 from modules.bm25 import SUPPORTED_LOCALES, load_bm25
-from modules.contentful import get_all_entries, getEntry
+from modules.contentful import get_all_entries, get_banner_url, getEntry
 from modules.embedding import chunk_text, embed_dense_passages
 from modules.pinecone_utils import upsert_batch
 from modules.richtext import extract_values
@@ -52,6 +52,7 @@ def embed_course():
             left_by_locale = fields.get("overviewLeftColumn", {})
             right_by_locale = fields.get("overviewRightColumn", {})
 
+            banner_url = get_banner_url(journey)
             all_locales = set(left_by_locale.keys()) | set(right_by_locale.keys())
 
             for locale in all_locales:
@@ -102,6 +103,7 @@ def embed_course():
                             "course_id": course_id,
                             "course_slug": course_slug,
                             "access_privacy": access_privacy,
+                            **({"banner_url": banner_url} if banner_url else {}),
                         },
                     })
 
