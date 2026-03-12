@@ -1,0 +1,15 @@
+[project]
+name = "search-embedding-c"
+version = "0.1.0"
+description = "Dense embedding pipeline for platform-v3 — multilingual-e5-large on Pinecone"
+requires-python = ">=3.12"
+dependencies = [
+    "pinecone>=4.0.0",
+    "python-dotenv>=1.0.0",
+    "contentful>=2.0.0",
+    "getstream>=3.0.0",
+    "stream-python>=5.4.0",
+    "langchain>=0.3.0",
+    "langchain-openai>=0.3.0",
+    "langchain-text-splitters>=1.1.1",
+]

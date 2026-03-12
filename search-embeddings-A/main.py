@@ -81,8 +81,8 @@ print("✅ Embedding model loaded")
 
 # %% Cell 3 - Define Contentful client and helpers
 client = contentful.Client(
-    access_token='UiJhdsdITsiph4VsRuTepu3WKTQjO731PFv1ztfCi2Q',
-    space_id='gs9txytepevj',
+    access_token=CONTENTFUL_ACCESS_TOKEN,
+    space_id=CONTENTFUL_SPACE_ID ,
     api_url='cdn.eu.contentful.com'
 )
 

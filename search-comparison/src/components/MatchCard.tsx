@@ -1,5 +1,5 @@
 import type { SearchMatch } from '../types'
-import { getTitle, getSnippet, getContentType, getLocale } from '../types'
+import { getTitle, getSnippet, getContentType, getLocale, getPageUrl } from '../types'
 
 const CONTENT_TYPE_COLORS: Record<string, string> = {
   solutionArticle: 'bg-blue-100 text-blue-700',
@@ -22,6 +22,7 @@ export default function MatchCard({ match, rank, locale, isOverlap, overlapRank,
   const contentType = getContentType(match.metadata)
   const resultLocale = getLocale(match.metadata)
   const isBoosted = match.score !== match.originalScore
+  const pageUrl = getPageUrl(match.metadata, locale)
 
   const borderColor = apiColor === 'indigo' ? 'border-l-indigo-400' : 'border-l-emerald-400'
   const rankColor = apiColor === 'indigo' ? 'bg-indigo-100 text-indigo-700' : 'bg-emerald-100 text-emerald-700'
@@ -70,7 +71,23 @@ export default function MatchCard({ match, rank, locale, isOverlap, overlapRank,
       </div>
 
       {/* Title */}
-      <p className="text-sm font-semibold text-gray-900 leading-snug mb-1.5">{title}</p>
+      {pageUrl ? (
+        <a
+          href={pageUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group flex items-start gap-1 mb-1.5"
+        >
+          <span className="text-sm font-semibold text-gray-900 leading-snug group-hover:text-indigo-600 transition-colors">
+            {title}
+          </span>
+          <svg className="w-3 h-3 mt-0.5 shrink-0 text-gray-300 group-hover:text-indigo-400 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+          </svg>
+        </a>
+      ) : (
+        <p className="text-sm font-semibold text-gray-900 leading-snug mb-1.5">{title}</p>
+      )}
 
       {/* Snippet */}
       {snippet && (

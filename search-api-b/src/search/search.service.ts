@@ -119,17 +119,31 @@ export class SearchService implements OnModuleInit {
       : await this.hybridQuery(denseVec, sparseVec, alpha, req.locale, req.contentType, topK);
     const pineconeMs = performance.now() - pineconeStart;
 
-    // ── Step 3: English fallback ─────────────────────────────────────────────
+    // ── Step 3: Deduplicate primary results by content_id ────────────────────
+    // Pinecone returns one match per chunk; keep only the highest-scoring chunk
+    // per content_id so each article/event/course appears at most once.
+    const primarySeen = new Map<string, typeof primaryResults[number]>();
+    for (const match of primaryResults) {
+      const contentId = match.metadata?.['content_id'] as string | undefined;
+      const key = contentId ?? match.id;
+      const existing = primarySeen.get(key);
+      if (!existing || (match.score ?? 0) > (existing.score ?? 0)) {
+        primarySeen.set(key, match);
+      }
+    }
+    const dedupedPrimary = [...primarySeen.values()];
+
+    // ── Step 4: English fallback ──────────────────────────────────────────────
     // Trigger when the requested page would be under-full from primary results alone.
     const seenContentIds = new Set<string>(
-      primaryResults.map((m) => m.metadata?.['content_id'] as string).filter(Boolean),
+      dedupedPrimary.map((m) => m.metadata?.['content_id'] as string).filter(Boolean),
     );
 
     let fallbackResults: typeof primaryResults = [];
-    const primaryCoversPage = primaryResults.length >= page * pageSize;
+    const primaryCoversPage = dedupedPrimary.length >= page * pageSize;
 
     if (!primaryCoversPage && req.locale !== 'en' && !req.crossLingual) {
-      const fallbackK = Math.min((page * pageSize - primaryResults.length) * 2, CONFIG.maxFetch);
+      const fallbackK = Math.min((page * pageSize - dedupedPrimary.length) * 2, CONFIG.maxFetch);
       const fallbackRaw = await this.hybridQuery(
         denseVec,
         sparseVec,
@@ -147,11 +161,11 @@ export class SearchService implements OnModuleInit {
       }
     }
 
-    // ── Step 4: Enrollment boost + re-sort ───────────────────────────────────
+    // ── Step 5: Enrollment boost + re-sort ───────────────────────────────────
     const enrolledSet = new Set(req.enrolledIds ?? []);
     const allMatches: SearchMatch[] = [];
 
-    for (const match of primaryResults) {
+    for (const match of dedupedPrimary) {
       const contentId = match.metadata?.['content_id'] as string;
       const isEnrolled = enrolledSet.has(contentId);
       allMatches.push({
@@ -179,13 +193,13 @@ export class SearchService implements OnModuleInit {
 
     allMatches.sort((a, b) => b.score - a.score);
 
-    // ── Step 5: Paginate ─────────────────────────────────────────────────────
+    // ── Step 6: Paginate ─────────────────────────────────────────────────────
     const startIdx = (page - 1) * pageSize;
     const pageMatches = allMatches.slice(startIdx, startIdx + pageSize);
 
     return {
       matches: pageMatches,
-      totalPrimary: primaryResults.length,
+      totalPrimary: dedupedPrimary.length,
       totalFallback: fallbackResults.length,
       page,
       pageSize,

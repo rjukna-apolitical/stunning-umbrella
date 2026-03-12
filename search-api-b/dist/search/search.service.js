@@ -52,11 +52,21 @@ let SearchService = SearchService_1 = class SearchService {
             ? await this.hybridQuery(denseVec, sparseVec, alpha, undefined, req.contentType, topK)
             : await this.hybridQuery(denseVec, sparseVec, alpha, req.locale, req.contentType, topK);
         const pineconeMs = performance.now() - pineconeStart;
-        const seenContentIds = new Set(primaryResults.map((m) => m.metadata?.['content_id']).filter(Boolean));
+        const primarySeen = new Map();
+        for (const match of primaryResults) {
+            const contentId = match.metadata?.['content_id'];
+            const key = contentId ?? match.id;
+            const existing = primarySeen.get(key);
+            if (!existing || (match.score ?? 0) > (existing.score ?? 0)) {
+                primarySeen.set(key, match);
+            }
+        }
+        const dedupedPrimary = [...primarySeen.values()];
+        const seenContentIds = new Set(dedupedPrimary.map((m) => m.metadata?.['content_id']).filter(Boolean));
         let fallbackResults = [];
-        const primaryCoversPage = primaryResults.length >= page * pageSize;
+        const primaryCoversPage = dedupedPrimary.length >= page * pageSize;
         if (!primaryCoversPage && req.locale !== 'en' && !req.crossLingual) {
-            const fallbackK = Math.min((page * pageSize - primaryResults.length) * 2, CONFIG.maxFetch);
+            const fallbackK = Math.min((page * pageSize - dedupedPrimary.length) * 2, CONFIG.maxFetch);
             const fallbackRaw = await this.hybridQuery(denseVec, sparseVec, CONFIG.fallbackAlpha, 'en', req.contentType, fallbackK);
             for (const match of fallbackRaw) {
                 const contentId = match.metadata?.['content_id'];
@@ -68,7 +78,7 @@ let SearchService = SearchService_1 = class SearchService {
         }
         const enrolledSet = new Set(req.enrolledIds ?? []);
         const allMatches = [];
-        for (const match of primaryResults) {
+        for (const match of dedupedPrimary) {
             const contentId = match.metadata?.['content_id'];
             const isEnrolled = enrolledSet.has(contentId);
             allMatches.push({
@@ -97,7 +107,7 @@ let SearchService = SearchService_1 = class SearchService {
         const pageMatches = allMatches.slice(startIdx, startIdx + pageSize);
         return {
             matches: pageMatches,
-            totalPrimary: primaryResults.length,
+            totalPrimary: dedupedPrimary.length,
             totalFallback: fallbackResults.length,
             page,
             pageSize,

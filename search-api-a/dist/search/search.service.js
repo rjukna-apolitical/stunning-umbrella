@@ -52,9 +52,22 @@ let SearchService = SearchService_1 = class SearchService {
         const pineconeStart = performance.now();
         const rawResults = await this.hybridQuery(denseVec, sparseVec, alpha, req.contentType, topK);
         const pineconeMs = round1(performance.now() - pineconeStart);
+        const seen = new Map();
+        for (const match of rawResults) {
+            const entityId = (match.metadata?.['course_id'] ??
+                match.metadata?.['entry_id'] ??
+                match.id);
+            const existing = seen.get(entityId);
+            if (!existing || (match.score ?? 0) > (existing.score ?? 0)) {
+                seen.set(entityId, match);
+            }
+        }
+        const deduped = [...seen.values()];
         const enrolledSet = new Set(req.enrolledIds ?? []);
-        const allMatches = rawResults.map((match) => {
-            const entryId = match.metadata?.['entry_id'];
+        const allMatches = deduped.map((match) => {
+            const entryId = (match.metadata?.['journey_id'] ??
+                match.metadata?.['entry_id'] ??
+                '');
             const isEnrolled = enrolledSet.has(entryId);
             return {
                 id: match.id,
@@ -70,7 +83,7 @@ let SearchService = SearchService_1 = class SearchService {
         const pageMatches = allMatches.slice(startIdx, startIdx + pageSize);
         return {
             matches: pageMatches,
-            totalPrimary: rawResults.length,
+            totalPrimary: deduped.length,
             totalFallback: 0,
             page,
             pageSize,

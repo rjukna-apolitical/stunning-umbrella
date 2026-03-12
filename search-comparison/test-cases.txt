@@ -1,0 +1,68 @@
+# Search Comparison Test Cases
+# Format: query | locale | contentType | description
+# contentType: solutionArticle | event | course | (blank = all)
+#
+# Designed to stress-test different aspects of hybrid retrieval:
+#   - Semantic vs exact-term matching
+#   - Acronym / proper noun handling
+#   - Cross-language concept equivalence
+#   - Sparse model language coverage (A: English-only, B: 17 locales)
+
+# ── English — semantic (dense should lead) ──────────────────────────────────
+making government more efficient | en | | Vague intent, no exact keywords
+building trust between citizens and institutions | en | | Abstract concept
+how to lead change in the public sector | en | | Conversational query
+what skills do civil servants need for the future | en | | Question-style query
+learning and development for government employees | en | course | Filtered to courses
+
+# ── English — exact / acronym (BM25 should boost B) ─────────────────────────
+GDPR compliance framework | en | | Acronym — tests sparse exact match
+SDGs sustainable development goals | en | | Acronym + expansion
+net zero carbon emissions policy | en | | Technical policy term
+open government data OGD | en | | Mixed acronym and phrase
+digital transformation | en | | Classic benchmark query
+
+# ── English — content type filters ──────────────────────────────────────────
+leadership workshop | en | event | Event filter
+data analysis skills | en | course | Course filter
+climate adaptation policy | en | solutionArticle | Article filter
+
+# ── French (fr) — tests B locale filter vs A cross-lingual ──────────────────
+transformation numérique | fr | | Equiv: "digital transformation"
+données ouvertes gouvernement | fr | | Equiv: "open government data"
+engagement citoyen | fr | | Equiv: "citizen engagement"
+innovation secteur public | fr | | Equiv: "public sector innovation"
+
+# ── French Canadian (fr-CA) — limited corpus, tests B fallback ───────────────
+transparence et responsabilité | fr-CA | | Equiv: "transparency and accountability"
+gouvernement numérique | fr-CA | | Low-volume locale
+
+# ── German (de) — no Snowball stemmer in B's TypeScript port ────────────────
+digitale Verwaltung | de | | Equiv: "digital government"
+öffentlicher Dienst Innovation | de | | Inflected German, tests stemming gap
+Beschaffungsreform | de | | Single compound word
+
+# ── Spanish (es) ─────────────────────────────────────────────────────────────
+transformación digital | es | | Equiv: "digital transformation"
+datos abiertos gobierno | es | | Equiv: "open government data"
+innovación sector público | es | | Equiv: "public sector innovation"
+
+# ── Portuguese Brazil (pt-BR) ────────────────────────────────────────────────
+transformação digital | pt-BR | | Equiv: "digital transformation"
+governo aberto | pt-BR | | Equiv: "open government"
+
+# ── Arabic (ar) — right-to-left, no stemmer in either port ──────────────────
+الحوكمة الرقمية | ar | | "Digital governance"
+البيانات المفتوحة | ar | | "Open data"
+
+# ── Japanese (ja) — whitespace fallback in B, no morphological analysis ──────
+デジタル変革 | ja | | "Digital transformation"
+電子政府サービス | ja | | "E-government services"
+
+# ── Korean (ko) ──────────────────────────────────────────────────────────────
+디지털 전환 | ko | | "Digital transformation"
+공공 서비스 혁신 | ko | | "Public service innovation"
+
+# ── Indonesian (id) ──────────────────────────────────────────────────────────
+transformasi digital | id | | Equiv: "digital transformation"
+inovasi pemerintah | id | | Equiv: "government innovation"

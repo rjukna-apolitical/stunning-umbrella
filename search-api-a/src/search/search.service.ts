@@ -123,11 +123,38 @@ export class SearchService implements OnModuleInit {
     );
     const pineconeMs = round1(performance.now() - pineconeStart);
 
-    // ── Step 3: Enrollment boost + re-sort ───────────────────────────────────
-    // search-embeddings-A uses `entry_id` (vs `content_id` in B)
+    // ── Step 3: Deduplicate by content entity ────────────────────────────────
+    // search-embeddings-A stores one vector per chunk, so multiple chunks from
+    // the same document can appear in the results. Keep only the highest-scoring
+    // chunk per entity.
+    //
+    // Key selection (mirrors getContentId in the comparison UI):
+    //   - Courses: `course_id` (the parent course entry) — dedups multiple journeys
+    //     from the same course AND aligns with search-embeddings-B which stores one
+    //     vector per course rather than per journey.
+    //   - Articles/events: `entry_id` — the Contentful entry ID, matches B's `content_id`.
+    const seen = new Map<string, typeof rawResults[number]>();
+    for (const match of rawResults) {
+      const entityId = (
+        (match.metadata?.['course_id'] as string | undefined) ??
+        (match.metadata?.['entry_id'] as string | undefined) ??
+        match.id
+      );
+      const existing = seen.get(entityId);
+      if (!existing || (match.score ?? 0) > (existing.score ?? 0)) {
+        seen.set(entityId, match);
+      }
+    }
+    const deduped = [...seen.values()];
+
+    // ── Step 4: Enrollment boost + re-sort ───────────────────────────────────
     const enrolledSet = new Set(req.enrolledIds ?? []);
-    const allMatches: SearchMatch[] = rawResults.map((match) => {
-      const entryId = match.metadata?.['entry_id'] as string;
+    const allMatches: SearchMatch[] = deduped.map((match) => {
+      const entryId = (
+        (match.metadata?.['journey_id'] as string | undefined) ??
+        (match.metadata?.['entry_id'] as string | undefined) ??
+        ''
+      );
       const isEnrolled = enrolledSet.has(entryId);
       return {
         id: match.id,
@@ -147,7 +174,7 @@ export class SearchService implements OnModuleInit {
 
     return {
       matches: pageMatches,
-      totalPrimary: rawResults.length,
+      totalPrimary: deduped.length,
       totalFallback: 0, // no locale-partitioned vectors in approach A
       page,
       pageSize,

@@ -1,0 +1,241 @@
+2026-03-10 16:52:18 [INFO    ] modules.contentful: Found 66 communityPage entries (1 pages of 200)
+2026-03-10 16:52:18 [INFO    ] __main__: Community kkybcCBJjWbF9znp1TDKm: title='Apolitical Research Fellowship for Public Impact' slug='fellowship' privacy='closed-hidden' published=1765819837
+2026-03-10 16:52:18 [INFO    ] __main__:   Feed text length: 156 chars
+2026-03-10 16:52:25 [INFO    ] httpx: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-10 16:52:25 [INFO    ] __main__:   Summary length: 1607 chars
+2026-03-10 16:52:26 [INFO    ] __main__: Community 2vgc21FfKZ3k8QMXUA2Gi4: title='Digital Transformation in Government' slug='digital-transformation' privacy='open-visible' published=1758199631
+2026-03-10 16:52:26 [INFO    ] __main__:   Feed text length: 604 chars
+2026-03-10 16:52:32 [INFO    ] httpx: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-10 16:52:32 [INFO    ] __main__:   Summary length: 1490 chars
+2026-03-10 16:52:32 [INFO    ] __main__: Community 75hxYjvfQFEeX1sYsmD4Lv: title='Government Innovation' slug='government-innovation' privacy='open-visible' published=1758193567
+2026-03-10 16:52:32 [INFO    ] __main__:   Feed text length: 20 chars
+2026-03-10 16:52:38 [INFO    ] httpx: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-10 16:52:38 [INFO    ] __main__:   Summary length: 1615 chars
+2026-03-10 16:52:39 [INFO    ] __main__: Community 296CfFz9KKhEpujFcq9v6Y: title='Global Policymaking Community' slug='adaptive-policymaking' privacy='open-visible' published=1758193401
+2026-03-10 16:52:39 [INFO    ] __main__:   Feed text length: 1322 chars
+2026-03-10 16:52:45 [INFO    ] httpx: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-10 16:52:45 [INFO    ] __main__:   Summary length: 1442 chars
+2026-03-10 16:52:45 [INFO    ] __main__: Community DK4kW4Za7RpopofQCUaGZ: title='Local Government' slug='local-government' privacy='open-visible' published=1758197710
+2026-03-10 16:52:45 [INFO    ] __main__:   Feed text length: 40 chars
+2026-03-10 16:52:52 [INFO    ] httpx: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-10 16:52:52 [INFO    ] __main__:   Summary length: 1538 chars
+2026-03-10 16:52:52 [INFO    ] __main__: Community 2Q3Sosk7qvBaBbTvTqu9Hx: title='AI in Government' slug='ai-in-government' privacy='open-visible' published=1758193260
+2026-03-10 16:52:53 [INFO    ] __main__:   Feed text length: 20297 chars
+2026-03-10 16:53:01 [INFO    ] httpx: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-10 16:53:01 [INFO    ] __main__:   Summary length: 1720 chars
+2026-03-10 16:53:02 [INFO    ] __main__: Community 1sqHTo5XIzFdBR0dyF7mJR: title='Managing People in Public Service' slug='people-managers' privacy='open-visible' published=1758193314
+2026-03-10 16:53:02 [INFO    ] __main__:   Feed text length: 0 chars
+2026-03-10 16:53:03 [WARNING ] __main__:   Skipping 1sqHTo5XIzFdBR0dyF7mJR: no summary generated
+2026-03-10 16:53:03 [INFO    ] __main__: Community 3sBncvzxSSXLNQDmf8UgZ0: title='Public Service Jobs Board' slug='public-service-jobs-board' privacy='open-visible' published=1758202636
+2026-03-10 16:53:03 [INFO    ] __main__:   Feed text length: 368 chars
+2026-03-10 16:53:12 [INFO    ] httpx: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-10 16:53:12 [INFO    ] __main__:   Summary length: 1576 chars
+2026-03-10 16:53:13 [INFO    ] __main__: Community 5rlLTgkoYemFI8MGF6LVBj: title='Neurodiversity in Public Service' slug='neurodiversity-in-public-service' privacy='open-visible' published=1758193349
+2026-03-10 16:53:13 [INFO    ] __main__:   Feed text length: 1048 chars
+2026-03-10 16:53:21 [INFO    ] httpx: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-10 16:53:21 [INFO    ] __main__:   Summary length: 1821 chars
+2026-03-10 16:53:21 [INFO    ] __main__: Community 4fRuWB6F3rwtDIax94Hmo2: title='Life in Government' slug='life-in-government' privacy='open-visible' published=1758197702
+2026-03-10 16:53:21 [INFO    ] __main__:   Feed text length: 2068 chars
+2026-03-10 16:53:31 [INFO    ] httpx: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-10 16:53:31 [INFO    ] __main__:   Summary length: 1557 chars
+2026-03-10 16:53:32 [INFO    ] __main__: Community zj1FAS03wOMvx3sMy3oPo: title='Project Management in Public Service' slug='project-managers' privacy='open-visible' published=1758193523
+2026-03-10 16:53:32 [INFO    ] __main__:   Feed text length: 0 chars
+2026-03-10 16:53:33 [WARNING ] __main__:   Skipping zj1FAS03wOMvx3sMy3oPo: no summary generated
+2026-03-10 16:53:33 [INFO    ] __main__: Community 3Xw4zhpgHqKhEbmNHPwLvw: title='Reimagining Public Institutions' slug='reimagining-public-institutions' privacy='open-visible' published=1758193639
+2026-03-10 16:53:33 [INFO    ] __main__:   Feed text length: 19 chars
+2026-03-10 16:53:39 [INFO    ] httpx: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-10 16:53:39 [INFO    ] __main__:   Summary length: 1570 chars
+2026-03-10 16:53:39 [INFO    ] __main__: Community 2OgUEhsVy8A8WkJmGAK8SZ: title='Canadian Public Servants' slug='canadian-public-servants' privacy='open-visible' published=1758193956
+2026-03-10 16:53:39 [INFO    ] __main__:   Feed text length: 0 chars
+2026-03-10 16:53:40 [WARNING ] __main__:   Skipping 2OgUEhsVy8A8WkJmGAK8SZ: no summary generated
+2026-03-10 16:53:40 [INFO    ] __main__: Community 4eNATPut9aXt5eNakc4BkV: title='Quantum Computing' slug='quantum-computing' privacy='open-visible' published=1758197829
+2026-03-10 16:53:40 [INFO    ] __main__:   Feed text length: 19 chars
+2026-03-10 16:53:48 [INFO    ] httpx: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-10 16:53:48 [INFO    ] __main__:   Summary length: 1744 chars
+2026-03-10 16:53:48 [INFO    ] __main__: Community 75PVmf4MoUttj3S9J7oxub: title='Digital Accessibility in Government' slug='digital-accessibility' privacy='open-visible' published=1758197705
+2026-03-10 16:53:48 [INFO    ] __main__:   Feed text length: 20 chars
+2026-03-10 16:54:04 [INFO    ] httpx: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-10 16:54:04 [INFO    ] __main__:   Summary length: 1862 chars
+2026-03-10 16:54:04 [INFO    ] __main__: Community KbkOOri85hoT5Eo7FPMpp: title='Innovative Procurement' slug='innovative-procurement' privacy='open-visible' published=1758197709
+2026-03-10 16:54:04 [INFO    ] __main__:   Feed text length: 0 chars
+2026-03-10 16:54:05 [WARNING ] __main__:   Skipping KbkOOri85hoT5Eo7FPMpp: no summary generated
+2026-03-10 16:54:05 [INFO    ] __main__: Community 7v1kJoSCDDScDgxjL2B3KG: title='Systems Thinking in Government' slug='systems-thinking' privacy='open-visible' published=1758199588
+2026-03-10 16:54:05 [INFO    ] __main__:   Feed text length: 41493 chars
+2026-03-10 16:54:15 [INFO    ] httpx: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-10 16:54:15 [INFO    ] __main__:   Summary length: 1496 chars
+2026-03-10 16:54:15 [INFO    ] __main__: Community 3DSpDLsgLiOCyHqBv1fou8: title='Energy and Climate' slug='net-zero' privacy='open-visible' published=1758193450
+2026-03-10 16:54:15 [INFO    ] __main__:   Feed text length: 0 chars
+2026-03-10 16:54:16 [WARNING ] __main__:   Skipping 3DSpDLsgLiOCyHqBv1fou8: no summary generated
+2026-03-10 16:54:16 [INFO    ] __main__: Community 2xVNpCqMPIMQ9KV5OLAn6d: title='Digital Excellence Programme Community' slug='digital-excellence-programme' privacy='closed-hidden' published=1758193921
+2026-03-10 16:54:16 [INFO    ] __main__:   Feed text length: 0 chars
+2026-03-10 16:54:17 [WARNING ] __main__:   Skipping 2xVNpCqMPIMQ9KV5OLAn6d: no summary generated
+2026-03-10 16:54:17 [INFO    ] __main__: Community 5yIhXNCg2qKNJHFPhc2eaD: title='Linguistic Data in Government' slug='linguistic-data' privacy='open-visible' published=1758197712
+2026-03-10 16:54:17 [INFO    ] __main__:   Feed text length: 0 chars
+2026-03-10 16:54:18 [WARNING ] __main__:   Skipping 5yIhXNCg2qKNJHFPhc2eaD: no summary generated
+2026-03-10 16:54:18 [INFO    ] __main__: Community 2WOkhoxSZ7oMVP1Ps0bj5H: title='Climate and Health Negotiators' slug='climate-negotiation' privacy='open-visible' published=1758193970
+2026-03-10 16:54:18 [INFO    ] __main__:   Feed text length: 0 chars
+2026-03-10 16:54:20 [WARNING ] __main__:   Skipping 2WOkhoxSZ7oMVP1Ps0bj5H: no summary generated
+2026-03-10 16:54:20 [INFO    ] __main__: Community 3cCLx1VRzuiYWdbW2UjHL5: title='COP30 Brazil' slug='unfccc-cop' privacy='open-visible' published=1759831502
+2026-03-10 16:54:20 [INFO    ] __main__:   Feed text length: 451 chars
+2026-03-10 16:54:29 [INFO    ] httpx: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-10 16:54:29 [INFO    ] __main__:   Summary length: 1907 chars
+2026-03-10 16:54:29 [INFO    ] __main__: Community 4c5a99Fn1jk3LmBWLrbzMz: title='Excellence in Government Customer Experience' slug='government-customer-experience' privacy='open-visible' published=1758193563
+2026-03-10 16:54:29 [INFO    ] __main__:   Feed text length: 15 chars
+2026-03-10 16:54:36 [INFO    ] httpx: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-10 16:54:36 [INFO    ] __main__:   Summary length: 1815 chars
+2026-03-10 16:54:37 [INFO    ] __main__: Community 5Y5XbU9FqxfLztFUeA88x8: title='Citizen Engagement and Technology' slug='citizen-engagement-and-technology' privacy='open-visible' published=1758199603
+2026-03-10 16:54:37 [INFO    ] __main__:   Feed text length: 233 chars
+2026-03-10 16:54:43 [INFO    ] httpx: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-10 16:54:43 [INFO    ] __main__:   Summary length: 1726 chars
+2026-03-10 16:54:43 [INFO    ] __main__: Community 4hxI7XgKSCwuYXxPJsZx0Q: title='Misinformation and Disinformation' slug='misinformation-and-disinformation' privacy='open-visible' published=1758193509
+2026-03-10 16:54:43 [INFO    ] __main__:   Feed text length: 0 chars
+2026-03-10 16:54:44 [WARNING ] __main__:   Skipping 4hxI7XgKSCwuYXxPJsZx0Q: no summary generated
+2026-03-10 16:54:44 [INFO    ] __main__: Community 4bLeCn4cBjSeYIdLBQB6aD: title='Women in Government' slug='women-in-government' privacy='open-visible' published=1758197829
+2026-03-10 16:54:44 [INFO    ] __main__:   Feed text length: 0 chars
+2026-03-10 16:54:45 [WARNING ] __main__:   Skipping 4bLeCn4cBjSeYIdLBQB6aD: no summary generated
+2026-03-10 16:54:45 [INFO    ] __main__: Community 1tbFYXtF55kvA979nQ4bsu: title='Public Health' slug='public-health' privacy='open-visible' published=1758199729
+2026-03-10 16:54:45 [INFO    ] __main__:   Feed text length: 40 chars
+2026-03-10 16:54:53 [INFO    ] httpx: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-10 16:54:53 [INFO    ] __main__:   Summary length: 1689 chars
+2026-03-10 16:54:53 [INFO    ] __main__: Community 4khUaipmnzKInlvZHvVE6F: title='Government Comms' slug='government-comms' privacy='open-visible' published=1758193714
+2026-03-10 16:54:53 [INFO    ] __main__:   Feed text length: 19 chars
+2026-03-10 16:54:58 [INFO    ] httpx: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-10 16:54:58 [INFO    ] __main__:   Summary length: 1559 chars
+2026-03-10 16:54:58 [INFO    ] __main__: Community 52lj3Gmp6wNWb91AqOBnV5: title='Open Source in Government' slug='open-source' privacy='open-visible' published=1758197711
+2026-03-10 16:54:58 [INFO    ] __main__:   Feed text length: 328 chars
+2026-03-10 16:55:07 [INFO    ] httpx: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-10 16:55:07 [INFO    ] __main__:   Summary length: 1751 chars
+2026-03-10 16:55:07 [INFO    ] __main__: Community 5QGrXbOSb97ywag45iOCLu: title='Data Skills Network' slug='data-skills' privacy='open-visible' published=1758201645
+2026-03-10 16:55:07 [INFO    ] __main__:   Feed text length: 193 chars
+2026-03-10 16:55:14 [INFO    ] httpx: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-10 16:55:14 [INFO    ] __main__:   Summary length: 1459 chars
+2026-03-10 16:55:14 [INFO    ] __main__: Community 19ePlyH9INIjtDeFUyH29j: title='Creative Bureaucracy' slug='creative-bureaucracy' privacy='open-visible' published=1758193780
+2026-03-10 16:55:14 [INFO    ] __main__:   Feed text length: 0 chars
+2026-03-10 16:55:15 [WARNING ] __main__:   Skipping 19ePlyH9INIjtDeFUyH29j: no summary generated
+2026-03-10 16:55:15 [INFO    ] __main__: Community 6iQ35MhPi9PjMmdavRIoiS: title='Agile in Government' slug='agile-government' privacy='open-visible' published=1758197710
+2026-03-10 16:55:15 [INFO    ] __main__:   Feed text length: 108 chars
+2026-03-10 16:55:22 [INFO    ] httpx: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-10 16:55:22 [INFO    ] __main__:   Summary length: 1641 chars
+2026-03-10 16:55:22 [INFO    ] __main__: Community 4i9h6O7KboYSrmFzUuX7cW: title='Open Data in Government' slug='open-data' privacy='open-visible' published=1758197667
+2026-03-10 16:55:22 [INFO    ] __main__:   Feed text length: 0 chars
+2026-03-10 16:55:23 [WARNING ] __main__:   Skipping 4i9h6O7KboYSrmFzUuX7cW: no summary generated
+2026-03-10 16:55:23 [INFO    ] __main__: Community 3IGTnyeuMreWLvXBGbd8JV: title='Design Community' slug='design-thinking' privacy='open-visible' published=1758202569
+2026-03-10 16:55:23 [INFO    ] __main__:   Feed text length: 274 chars
+2026-03-10 16:55:30 [INFO    ] httpx: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-10 16:55:30 [INFO    ] __main__:   Summary length: 1302 chars
+2026-03-10 16:55:30 [INFO    ] __main__: Community 3TGGDUcnDHqsuVKbpwJjeZ: title='Carbon Neutral Cities' slug='carbon-neutral-cities' privacy='open-visible' published=1758193606
+2026-03-10 16:55:30 [INFO    ] __main__:   Feed text length: 19 chars
+2026-03-10 16:55:38 [INFO    ] httpx: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-10 16:55:38 [INFO    ] __main__:   Summary length: 1711 chars
+2026-03-10 16:55:38 [INFO    ] __main__: Community 4jjVsSDMrbD2gWefzh9SzS: title='Community Building in Government' slug='community-building-in-government' privacy='open-visible' published=1758193369
+2026-03-10 16:55:38 [INFO    ] __main__:   Feed text length: 25 chars
+2026-03-10 16:55:46 [INFO    ] httpx: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-10 16:55:46 [INFO    ] __main__:   Summary length: 1656 chars
+2026-03-10 16:55:46 [INFO    ] __main__: Community MBNxO4igpQ3Y9BUvZjiFw: title='Gender Equality in Government' slug='gender-equality' privacy='open-visible' published=1758197648
+2026-03-10 16:55:46 [INFO    ] __main__:   Feed text length: 0 chars
+2026-03-10 16:55:47 [WARNING ] __main__:   Skipping MBNxO4igpQ3Y9BUvZjiFw: no summary generated
+2026-03-10 16:55:47 [INFO    ] __main__: Community 74JZO2QdqDoK4EDfGKemB5: title='Learning and Development in Government' slug='learning-and-development-in-government' privacy='open-visible' published=1758201595
+2026-03-10 16:55:47 [INFO    ] __main__:   Feed text length: 190 chars
+2026-03-10 16:55:55 [INFO    ] httpx: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-10 16:55:55 [INFO    ] __main__:   Summary length: 1611 chars
+2026-03-10 16:55:55 [INFO    ] __main__: Community 15OX47THbphMh2pLTuqyov: title='LGBTQIA+ in the Public Service' slug='lgbtqia-in-public-service' privacy='open-visible' published=1758193489
+2026-03-10 16:55:55 [INFO    ] __main__:   Feed text length: 0 chars
+2026-03-10 16:55:56 [WARNING ] __main__:   Skipping 15OX47THbphMh2pLTuqyov: no summary generated
+2026-03-10 16:55:56 [INFO    ] __main__: Community 2AtdrVPjS4tdAhxyv1vRIR: title='Long-term Governance and Futures Thinking' slug='futures-thinking' privacy='open-visible' published=1758199627
+2026-03-10 16:55:56 [INFO    ] __main__:   Feed text length: 789 chars
+2026-03-10 16:56:05 [INFO    ] httpx: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-10 16:56:05 [INFO    ] __main__:   Summary length: 1851 chars
+2026-03-10 16:56:06 [INFO    ] __main__: Community 7qSn0t4D6ECbiXQBau59ca: title='Career Development' slug='fyn-new-public-servants' privacy='open-visible' published=1758193311
+2026-03-10 16:56:06 [INFO    ] __main__:   Feed text length: 588 chars
+2026-03-10 16:56:14 [INFO    ] httpx: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-10 16:56:14 [INFO    ] __main__:   Summary length: 1593 chars
+2026-03-10 16:56:14 [INFO    ] __main__: Community BwWdUF9URmqa5R9IYK41E: title='Writing Effectively in Government' slug='writing-in-government' privacy='open-visible' published=1758197584
+2026-03-10 16:56:14 [INFO    ] __main__:   Feed text length: 1228 chars
+2026-03-10 16:56:21 [INFO    ] httpx: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-10 16:56:21 [INFO    ] __main__:   Summary length: 1673 chars
+2026-03-10 16:56:21 [INFO    ] __main__: Community 2IVY18hFE4DSKiZ2QqqzRe: title='Playground' slug='playground' privacy='closed-hidden' published=1758193217
+2026-03-10 16:56:21 [INFO    ] __main__:   Feed text length: 831 chars
+2026-03-10 16:56:29 [INFO    ] httpx: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-10 16:56:29 [INFO    ] __main__:   Summary length: 1621 chars
+2026-03-10 16:56:29 [INFO    ] __main__: Community 6b15bT6bFb9Jk5AJmo5JgD: title='The Government of Albania AI Community' slug='the-government-of-albania-ai-community' privacy='open-hidden' published=1763563389
+2026-03-10 16:56:29 [INFO    ] __main__:   Feed text length: 0 chars
+2026-03-10 16:56:30 [WARNING ] __main__:   Skipping 6b15bT6bFb9Jk5AJmo5JgD: no summary generated
+2026-03-10 16:56:30 [INFO    ] __main__: Community 53CY7vM2CpEu7w4h1uOi2f: title='Նորարարությունը Հայաստանի կառավարությունում' slug='innovation-in-armenia' privacy='closed-hidden' published=1758797560
+2026-03-10 16:56:30 [INFO    ] __main__:   Feed text length: 0 chars
+2026-03-10 16:56:31 [WARNING ] __main__:   Skipping 53CY7vM2CpEu7w4h1uOi2f: no summary generated
+2026-03-10 16:56:31 [INFO    ] __main__: Community 7KqsLbcdJcXZnbgjcA6iR9: title='Apolitical Team' slug='apolitical-team' privacy='closed-hidden' published=1758193216
+2026-03-10 16:56:35 [INFO    ] __main__:   Feed text length: 256560 chars
+2026-03-10 16:56:36 [INFO    ] modules.summarise: Text length 256560 exceeds limit, using map_reduce summarisation
+2026-03-10 16:56:51 [INFO    ] httpx: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-10 16:57:02 [INFO    ] httpx: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-10 16:57:10 [INFO    ] httpx: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-10 16:57:21 [INFO    ] httpx: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-10 16:57:27 [INFO    ] httpx: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-10 16:57:27 [INFO    ] __main__:   Summary length: 2343 chars
+2026-03-10 16:57:28 [INFO    ] __main__: Community idJfvYZsy0LEFPHHcZKMd: title='Innovation in the Government of Armenia' slug='innovation-in-armenian-government' privacy='closed-hidden' published=1758798864
+2026-03-10 16:57:28 [INFO    ] __main__:   Feed text length: 0 chars
+2026-03-10 16:57:29 [WARNING ] __main__:   Skipping idJfvYZsy0LEFPHHcZKMd: no summary generated
+2026-03-10 16:57:29 [INFO    ] __main__: Community 69iSNMw6H4JH8s5GmX4HKi: title="FCDO's ECE Foundation Programme" slug='fcdo-ece-foundation-programme' privacy='open-hidden' published=1758201603
+2026-03-10 16:57:29 [INFO    ] __main__:   Feed text length: 396 chars
+2026-03-10 16:57:36 [INFO    ] httpx: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-10 16:57:36 [INFO    ] __main__:   Summary length: 1528 chars
+2026-03-10 16:57:36 [INFO    ] __main__: Community 5qRnLgoNsp2DmcPC8nHsbF: title='Building a Sustainable US Federal Government' slug='building-a-sustainable-us-federal-government' privacy='closed-hidden' published=1758199689
+2026-03-10 16:57:36 [INFO    ] __main__:   Feed text length: 0 chars
+2026-03-10 16:57:37 [WARNING ] __main__:   Skipping 5qRnLgoNsp2DmcPC8nHsbF: no summary generated
+2026-03-10 16:57:37 [INFO    ] __main__: Community 4KSxpr6JRnbDL9RwnBf4HB: title='Apolitical Feedback' slug='apolitical-feedback' privacy='open-hidden' published=1758199534
+2026-03-10 16:57:37 [INFO    ] __main__:   Feed text length: 3219 chars
+2026-03-10 16:57:47 [INFO    ] httpx: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-10 16:57:47 [INFO    ] __main__:   Summary length: 1586 chars
+2026-03-10 16:57:47 [INFO    ] __main__: Community 53AYetK0XPZh8pnBlWcDer: title='Western Cape Government' slug='western-cape-government' privacy='closed-hidden' published=1758197880
+2026-03-10 16:57:47 [INFO    ] __main__:   Feed text length: 0 chars
+2026-03-10 16:57:48 [WARNING ] __main__:   Skipping 53AYetK0XPZh8pnBlWcDer: no summary generated
+2026-03-10 16:57:48 [INFO    ] __main__: Community 75jNQgHTtFA0utPR94QMVj: title='L&D in the UK Government' slug='learning-and-development-in-the-uk-government' privacy='open-hidden' published=1758197813
+2026-03-10 16:57:48 [INFO    ] __main__:   Feed text length: 0 chars
+2026-03-10 16:57:49 [WARNING ] __main__:   Skipping 75jNQgHTtFA0utPR94QMVj: no summary generated
+2026-03-10 16:57:49 [INFO    ] __main__: Community 1BbUHngGUt8EvswpmcyHku: title='Apolitical Insiders' slug='apolitical-insiders' privacy='open-hidden' published=1758197800
+2026-03-10 16:57:50 [INFO    ] __main__:   Feed text length: 0 chars
+2026-03-10 16:57:51 [WARNING ] __main__:   Skipping 1BbUHngGUt8EvswpmcyHku: no summary generated
+2026-03-10 16:57:51 [INFO    ] __main__: Community CXpOemi9TPpNl3oZCl5lg: title='Collaborative Policy Delivery' slug='policy-delivery' privacy='open-hidden' published=1758197711
+2026-03-10 16:57:51 [INFO    ] __main__:   Feed text length: 16 chars
+2026-03-10 16:57:58 [INFO    ] httpx: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-10 16:57:58 [INFO    ] __main__:   Summary length: 1613 chars
+2026-03-10 16:57:58 [INFO    ] __main__: Community JaXu6V32YIUPzk4brLVVY: title='Political Leadership Community of Practice' slug='political-leadership' privacy='open-hidden' published=1758197699
+2026-03-10 16:57:58 [INFO    ] __main__:   Feed text length: 0 chars
+2026-03-10 16:57:59 [WARNING ] __main__:   Skipping JaXu6V32YIUPzk4brLVVY: no summary generated
+2026-03-10 16:57:59 [INFO    ] __main__: Community KKm33zW9VsHjC48t0640f: title='Nature Finance Action Group' slug='nature-finance-action-group' privacy='closed-hidden' published=1758193976
+2026-03-10 16:57:59 [INFO    ] __main__:   Feed text length: 0 chars
+2026-03-10 16:58:00 [WARNING ] __main__:   Skipping KKm33zW9VsHjC48t0640f: no summary generated
+2026-03-10 16:58:00 [INFO    ] __main__: Community 39OftN9rmiUV8Xp5PwNt1e: title='UK Learning Framework Private Community (Demo)' slug='learning-framework-private-community-demo' privacy='closed-hidden' published=1758193876
+2026-03-10 16:58:00 [INFO    ] __main__:   Feed text length: 0 chars
+2026-03-10 16:58:01 [WARNING ] __main__:   Skipping 39OftN9rmiUV8Xp5PwNt1e: no summary generated
+2026-03-10 16:58:01 [INFO    ] __main__: Community 2eptufEUUqUxqpllDIHfI9: title='Planning and Managing Digital Change in the Public Sector Programme Community' slug='planning-and-managing-digital-change-in-the-public-sector' privacy='closed-hidden' published=1758193681
+2026-03-10 16:58:02 [INFO    ] __main__:   Feed text length: 0 chars
+2026-03-10 16:58:03 [WARNING ] __main__:   Skipping 2eptufEUUqUxqpllDIHfI9: no summary generated
+2026-03-10 16:58:03 [INFO    ] __main__: Community 5nr97790ZVOQPNU2ivress: title='Unlocking Digital Excellence Programme Community' slug='unlocking-digital-excellence-lga' privacy='closed-hidden' published=1758193638
+2026-03-10 16:58:03 [INFO    ] __main__:   Feed text length: 0 chars
+2026-03-10 16:58:04 [WARNING ] __main__:   Skipping 5nr97790ZVOQPNU2ivress: no summary generated
+2026-03-10 16:58:04 [INFO    ] __main__: Community 3RdTnNk6xPq9r87d7AcaaE: title='Public Sector Innovation Labs' slug='innovation-labs' privacy='open-hidden' published=1758193564
+2026-03-10 16:58:04 [INFO    ] __main__:   Feed text length: 0 chars
+2026-03-10 16:58:05 [WARNING ] __main__:   Skipping 3RdTnNk6xPq9r87d7AcaaE: no summary generated
+2026-03-10 16:58:05 [INFO    ] __main__: Community 1j75o7HOslaOqhmbWSpR3H: title='Sustainable Finance' slug='sustainable-finance' privacy='open-hidden' published=1758193482
+2026-03-10 16:58:05 [INFO    ] __main__:   Feed text length: 0 chars
+2026-03-10 16:58:06 [WARNING ] __main__:   Skipping 1j75o7HOslaOqhmbWSpR3H: no summary generated
+2026-03-10 16:58:06 [INFO    ] __main__: Community 5eJdhBpMHetvOQIdgBxBMn: title='Reimagining Public Institutions (deprecated version)' slug='redesigning-public-organisations' privacy='open-hidden' published=1758193463
+2026-03-10 16:58:06 [INFO    ] __main__:   Feed text length: 0 chars
+2026-03-10 16:58:07 [WARNING ] __main__:   Skipping 5eJdhBpMHetvOQIdgBxBMn: no summary generated
+2026-03-10 16:58:07 [INFO    ] __main__: Community 3DYPCJ1GJnQflzTYYQ5J4: title='Digital Public Infrastructure' slug='digital-public-infrastructure' privacy='open-hidden' published=1758193462
+2026-03-10 16:58:07 [INFO    ] __main__:   Feed text length: 0 chars
+2026-03-10 16:58:08 [WARNING ] __main__:   Skipping 3DYPCJ1GJnQflzTYYQ5J4: no summary generated
+2026-03-10 16:58:08 [INFO    ] __main__: Community kkdKktnXZIm6YQBx2etVi: title='Apolitical Demo' slug='apolitical-demo' privacy='open-hidden' published=1758193315
+2026-03-10 16:58:08 [INFO    ] __main__:   Feed text length: 0 chars
+2026-03-10 16:58:09 [WARNING ] __main__:   Skipping kkdKktnXZIm6YQBx2etVi: no summary generated
+2026-03-10 16:58:09 [INFO    ] __main__: Community 6YESyXhBovLk9cVDjdz32o: title='Pre-Launch Trial Feedback Community' slug='government-skills-impact-tracker-trial-participant-community' privacy='open-hidden' published=1758193309
+2026-03-10 16:58:09 [INFO    ] __main__:   Feed text length: 11430 chars
+2026-03-10 16:58:18 [INFO    ] httpx: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-10 16:58:18 [INFO    ] __main__:   Summary length: 2079 chars
+2026-03-10 16:58:18 [INFO    ] __main__: Community 22hIPBaFfS0JQ3ymUxJ256: title='Community Feedback (Apolitical team only)' slug='community-feedback' privacy='closed-hidden' published=1758193218
+2026-03-10 16:58:20 [INFO    ] __main__:   Feed text length: 75425 chars
+2026-03-10 16:58:32 [INFO    ] httpx: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-10 16:58:32 [INFO    ] __main__:   Summary length: 2190 chars
+2026-03-10 16:58:33 [INFO    ] modules.pinecone_utils: Upserted batch of 35 vectors
+2026-03-10 16:58:33 [INFO    ] __main__: Done. Upserted 35 vectors for community.
